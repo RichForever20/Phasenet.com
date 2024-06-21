@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group .checkbox-label {
+            display: inline;
+        }
+        .form-group .attachment-field {
+            display: block;
+        }
+        .form-group .hidden {
+            display: none;
+        }
+        .form-group .submit-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-group .submit-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Join Us to Pioneer Change</h2>
+    <form id="ideaSubmissionForm" action="submit_form.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="firstName">*First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">*Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" id="organizationName" name="organizationName">
+        </div>
+        <div class="form-group">
+            <label for="country">*Country of Residence:</label>
+            <input type="text" id="country" name="country" required>
+        </div>
+        <div class="form-group">
+            <label for="email">*Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="problemDescription">*Describe at a high level the problem your idea will solve. DO NOT get into how it your idea will solve the problem:</label>
+            <textarea id="problemDescription" name="problemDescription" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="awareOfSolution">*Are you aware of any digital product that will deliver the same solution:</label>
+            <select id="awareOfSolution" name="awareOfSolution" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group hidden" id="existingProductDetailsGroup">
+            <label for="existingProductDetails">If “Yes”, Provide details of the existing Digital Product:</label>
+            <textarea id="existingProductDetails" name="existingProductDetails"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="ndaFile">For your Intellectual Property Protection, attach a copy of your Non-Disclosure Agreement:</label>
+            <input type="file" id="ndaFile" name="ndaFile" class="attachment-field">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="requestNda" name="requestNda">
+            <label for="requestNda" class="checkbox-label">No NDA currently, request a copy of PhaseNet Innovations Ltd.’s NDA Draft</label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-button" id="submitButton" disabled>Submit</button>
+        </div>
+    </form>
+    <div class="success-message" id="successMessage">
+        We appreciate your interest in joining us as a partner. A representative from our team will reach out to you soon.
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('ideaSubmissionForm');
+        const submitButton = document.getElementById('submitButton');
+        const successMessage = document.getElementById('successMessage');
+        const awareOfSolution = document.getElementById('awareOfSolution');
+        const existingProductDetailsGroup = document.getElementById('existingProductDetailsGroup');
+        const requestNda = document.getElementById('requestNda');
+        const ndaFile = document.getElementById('ndaFile');
+
+        form.addEventListener('input', function() {
+            // Enable submit button if all required fields are filled
+            const allRequiredFieldsFilled = Array.from(form.querySelectorAll('input[required], textarea[required], select[required]'))
+                .every(field => field.value.trim() !== '');
+
+            submitButton.disabled = !allRequiredFieldsFilled;
+        });
+
+        awareOfSolution.addEventListener('change', function() {
+            if (this.value === 'yes') {
+                existingProductDetailsGroup.classList.remove('hidden');
+                document.getElementById('existingProductDetails').setAttribute('required', 'required');
+            } else {
+                existingProductDetailsGroup.classList.add('hidden');
+                document.getElementById('existingProductDetails').removeAttribute('required');
+            }
+        });
+
+        requestNda.addEventListener('change', function() {
+            if (this.checked) {
+                ndaFile.classList.add('hidden');
+                ndaFile.removeAttribute('required');
+            } else {
+                ndaFile.classList.remove('hidden');
+                ndaFile.setAttribute('required', 'required');
+            }
+        });
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            successMessage.style.display = 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
