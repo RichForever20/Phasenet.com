@@ -3443,7 +3443,11 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
     line-height: 30px;
 }
 }
-
+@media (max-width: 428px) {
+  .font_30{font-size:22px !important;
+  padding-top: 30px;
+  }
+}
 @media (max-width: 320px) {
 .list-group-item span {
     font-size: 15px;
@@ -3456,11 +3460,13 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .font_30{font-size:10px !important;}
 
 }
-@media (max-width: 360px) {
+@media (max-width: 375px) {
   .font_30{font-size:20px !important;
- padding-top: 20px;
+ padding-top: 30px;
   }
-
+.main-h{
+  line-height: 30px;
+}
 
 }
 
