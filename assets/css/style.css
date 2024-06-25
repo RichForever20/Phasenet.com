@@ -1140,16 +1140,21 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 
   padding-bottom: 200px;
       clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0% 100%, 10% 100%, 0% 101%, 0% 100%);
-      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 80%, 0% 99%, 0% 97%, 0% 100%) !important;
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 60%, 0% 100%, 0% 97%, 0% 100%) !important;
     }
 
 @media (max-width: 480px){
   .tabas-gb-clip{
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 60%, 0% 99%, 0% 97%, 0% 100%) !important;
+    -webkit-clip-path: polygon(0% 0%, 90% 0%, 90% 40%, 0% 50%, 0% 99%, 0% 97%, 0% 100%) !important;
 
   }
+ 
 }
-
+@media (max-width: 375px){
+  .tt{
+    display: none;
+  }
+}
 
 .bhoechie-tab-content p{
     font-size: 20px;
@@ -1911,6 +1916,7 @@ padding-bottom: 90px;
 .footer-menu{
   padding:0px;
   margin:0px;
+ 
 }
 .footer-left-h{
     font-size: 20px;
@@ -1953,9 +1959,12 @@ padding-bottom: 90px;
     margin-right:10px;
     color:#3b4a6b !important;
 }
-
+.socc{
+  padding-left: 20px;
+  font-size: 17px;
+}
 .social:hover {
-     -webkit-transform: scale(1.1);
+     -webkit-transform: scale(1.0);
      -moz-transform: scale(1.1);
      -o-transform: scale(1.1);
  }
@@ -1963,8 +1972,8 @@ padding-bottom: 90px;
      -webkit-transform: scale(0.8);
      /* Browser Variations: */
      
-     -moz-transform: scale(0.8);
-     -o-transform: scale(0.8);
+     /* -moz-transform: scale(0.8); */
+     /* -o-transform: scale(0.8); */
      -webkit-transition-duration: 0.5s;
      -moz-transition-duration: 0.5s;
      -o-transition-duration: 0.5s;
@@ -1996,7 +2005,7 @@ iframe{
   .our_footer_area{
     padding-top:30px;
     padding-bottom: 30px;
-    height: 900px;
+    height: 100%;
   }
  }
 
@@ -2026,7 +2035,11 @@ iframe{
   }
 }
 
-
+@media (min-width: 800px) {
+  .our_footer_area{
+    height: 100%;
+  }
+}
 .mt-30{
   margin-bottom:10px;
 }
@@ -2077,7 +2090,12 @@ iframe{
  }
 .bigpixi-footer-social{
   margin-top:40px;
+ 
 }
+.bigpixi-footer-social i{
+display: block;
+}
+
 /*End Edit-css*/
 /*--------------------------------------------------*/
 
@@ -2164,6 +2182,7 @@ iframe{
 
     .bigpixi-Team-social a{
       color:#494dcb !important;
+      
     }
     .bigpixi-Team-social .fa:hover{
       color:#494dcb !important;
@@ -3288,7 +3307,7 @@ button.navbar-toggle {
     display: none;
   }
   .bigpixi-footer-social {
-    margin: 30px 0px;
+    margin-right: 30px 0px;
 }
 .bg_top_table{
   padding-top: 30px;
@@ -3389,7 +3408,8 @@ div#banner-text {
     display: block;
 }
 img.filter-img{
-  display: none;
+  display: ;
+  height: 50px;
   }
  .list-group-item{
   margin-left:  0px;

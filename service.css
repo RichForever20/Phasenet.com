@@ -36,6 +36,12 @@ padding-top:70px ;
         font-size: 25px;
     }
    
+   
+}
+@media (max-width: 375px){
+    .coming-soon{
+        height: 100px;
+    }
 }
 .coming-soon{
     background-image: url("assets/images/coming-soon.jpg");
@@ -43,5 +49,25 @@ padding-top:70px ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 300px;
+}
+.fancybox {
+    display: inline-block;
+    vertical-align: top;
+}
+.fancybox img {
+    display: block;
+}
+.thumb{
+    display: flex;
+    justify-content: space-around;
+}
+.nail{
+    margin-top: 50px;
+}
+@media (max-width: 375px){
+.nail{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 }
