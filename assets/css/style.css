@@ -3418,6 +3418,7 @@ div#banner-text {
 img.filter-img{
   display: ;
   height: 50px;
+  /* padding-right: 20px; */
   }
  .list-group-item{
   margin-left:  0px;

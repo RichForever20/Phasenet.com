@@ -70,9 +70,15 @@ padding-top:70px ;
     padding-left: 15px;
     padding-right: 15px;
 }
+
 }
 .nail p{
     text-align: justify;
     padding-left: 15px;
     padding-right: 15px;
+}
+@media (max-width: 438px){
+.cms{
+    padding-left: 12px;
+}
 }
