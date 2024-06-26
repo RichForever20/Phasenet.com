@@ -3208,7 +3208,11 @@ h3.blog-title {
 
 }
 }
-  
+  @media (max-width: 834px){
+    .social{
+      margin-left: -80px;
+    }
+  }
 @media (max-width: 767px) {
   
 section {
@@ -3470,6 +3474,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 @media (max-width: 428px) {
   .font_30{font-size:22px !important;
   padding-top: 30px;
+  }
+  .social{
+    margin-left: -30px;
   }
 }
 @media (max-width: 320px) {
