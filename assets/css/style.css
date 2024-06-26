@@ -78,6 +78,7 @@ This files contents are outlined below.
  *.media query in css-Responsive End
 
 /*--------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Lobster&display=swap');
 
 
 /*Color Variables*/
@@ -1131,6 +1132,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 }
 .bhoechie-tab-content{
   position: relative;
+  /* padding-left: 20px; */
 }
 .tabas-gb-clip{
       position: absolute;
@@ -1154,6 +1156,18 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   .tt{
     display: none;
   }
+  .bhoechie-tab-content{
+    position: relative;
+    padding-right: 90px;
+  }
+  .class1{
+    position: relative;
+    bottom:105px;
+  }
+  .about_row{
+    margin-top:1px;
+  }
+  
 }
 
 .bhoechie-tab-content p{
@@ -2109,7 +2123,9 @@ display: block;
 16.about_page_css_start
 ------------------------------------*/
 
-.about_text{color:#6871f4;}
+.about_text{color:#6871f4;
+  font-family: 'Lobster', cursive;
+}
 
 .about_banner_mb_50{
   margin-bottom: 50px;
@@ -3378,7 +3394,12 @@ div#banner-text {
     margin-bottom: 30px;
   }
 }
-
+@media (max-width: 375px) {
+  .bhoechie-tab-content p{
+  /* padding-bottom: -50px; */
+  }
+ 
+}
 @media (max-width: 480px) {
   .bg-about-img{
     background-image: none;
@@ -3403,14 +3424,14 @@ div#banner-text {
 }
 
 .bhoechie-tab-content h2 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
-    padding: 25px 0px;
+    padding: 0px 0px;
 }
 .bhoechie-tab-content p {
     font-size: 14px;
     line-height: 25px;
-    padding-bottom: 20px;
+    /* padding-bottom: 10px; */
 }
 .list-group-item span {
     display: block;
@@ -3479,6 +3500,27 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   .social{
     margin-left: -30px;
   }
+  .class2{
+    position: relative;
+    /* top: 20px; */
+  }
+  .box {
+    width: 300px; 
+    height: 400px; 
+    padding-left: 1px;
+    /* border: 1px solid #000; */
+    overflow: hidden; 
+    word-wrap: break-word; 
+    font-size: 14px; 
+    line-height: 1.5; 
+  }
+  .class2{
+    position: relative;
+    bottom:90px ;
+  }
+  .about_row{
+    margin-top:-25px;
+  }
 }
 @media (max-width: 320px) {
 .list-group-item span {
@@ -3490,7 +3532,16 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
     font-size: 13px;
 }
 .font_30{font-size:10px !important;}
-
+.box {
+  width: 100px; 
+  height: 400px; 
+  padding-left: 1px;
+  /* border: 1px solid #000; */
+  overflow: hidden; 
+  word-wrap: break-word; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
 }
 @media (max-width: 375px) {
   .font_30{font-size:20px !important;
@@ -3502,6 +3553,19 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .social{
   margin-left: -30px;
 }
+.box {
+  width: 300px; 
+  height: 400px; 
+  padding-left: 1px;
+  /* border: 1px solid #000; */
+  overflow: hidden; 
+  word-wrap: break-word; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+.NU{
+  text-align: left;
+font-weight: 10;}
 }
 
 /*------------------------------------
@@ -3517,8 +3581,16 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   color: #012b72;
   text-decoration: underline;
 }
-
-
+.box {
+  /* width: 340px;  */
+  /* height: ;  */
+  /* padding: 10px; */
+  /* border: 1px solid #000; */
+  /* overflow: hidden;  */
+  /* word-wrap: break-word;  */
+  /* font-size: 14px;  */
+  /* line-height: 1.5;  */
+}
 
 
 
